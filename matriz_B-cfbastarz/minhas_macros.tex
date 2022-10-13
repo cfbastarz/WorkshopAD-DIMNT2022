@@ -1,0 +1,13 @@
+\pgfplotsset{width=4.5cm,compat=1.8,every tick label/.append style={font=\tiny}}
+\pgfmathdeclarefunction{gauss}{2}{%
+\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\newcommand{\unilogo}{
+  \setlength{\TPHorizModule}{1pt}
+  \setlength{\TPVertModule}{1pt}
+   % textblock{}{x,y}: pos(x) = leftUpperCorner + (x * \TPHorizModule), pos(y) = leftUpperCorner - (y * \TPVertModule)
+  \begin{textblock}{1}(25,2)
+    \includegraphics[width=45pt,height=45pt]{Logomarca2020.png}
+  \end{textblock}
+  }

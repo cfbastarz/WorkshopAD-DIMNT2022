@@ -1,0 +1,24 @@
+\babel@toc {brazilian}{}\relax 
+\beamer@sectionintoc {1}{Introdução}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Um Desafio}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Modelagem e Assimilação}{6}{0}{1}
+\beamer@subsectionintoc {1}{3}{Fontes de Incerteza}{12}{0}{1}
+\beamer@sectionintoc {2}{Importância da Matriz $\mathbf {B}$}{17}{0}{2}
+\beamer@subsectionintoc {2}{1}{Distribuição Gaussiana dos erros}{17}{0}{2}
+\beamer@subsectionintoc {2}{2}{Incremento de Análise}{21}{0}{2}
+\beamer@sectionintoc {3}{Cálculo da Matriz $\mathbf {B}$}{24}{0}{3}
+\beamer@subsectionintoc {3}{1}{Aspecto da Matriz $\mathbf {B}$}{24}{0}{3}
+\beamer@subsectionintoc {3}{2}{Método NMC}{25}{0}{3}
+\beamer@subsectionintoc {3}{3}{Outros Aspectos}{26}{0}{3}
+\beamer@sectionintoc {4}{Resultados}{36}{0}{4}
+\beamer@subsectionintoc {4}{1}{Produção Técnica}{36}{0}{4}
+\beamer@subsectionintoc {4}{2}{Matrizes de Projeção}{40}{0}{4}
+\beamer@subsectionintoc {4}{3}{Desvios-padrão}{41}{0}{4}
+\beamer@subsectionintoc {4}{4}{Comprimentos de Escala (Horiz./Vert.)}{42}{0}{4}
+\beamer@subsectionintoc {4}{5}{Incremento de análise}{44}{0}{4}
+\beamer@sectionintoc {5}{MONAN}{45}{0}{5}
+\beamer@subsectionintoc {5}{1}{JEDI}{45}{0}{5}
+\beamer@subsectionintoc {5}{2}{SABER}{46}{0}{5}
+\beamer@sectionintoc {6}{Dificuldades e Desafios}{47}{0}{6}
+\beamer@subsectionintoc {6}{1}{Algumas Questões}{47}{0}{6}
+\beamer@sectionintoc {7}{Referências Bibliográficas}{54}{0}{7}

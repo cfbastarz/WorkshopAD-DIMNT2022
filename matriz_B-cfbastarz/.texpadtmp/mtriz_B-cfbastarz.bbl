@@ -1,0 +1,41 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Bastarz 2022]{bastarz/2022}
+\abntrefinfo{Bastarz}{BASTARZ}{2022}
+{BASTARZ, C.~F. \emph{GSIBerror: Uma classe para ler e plotar os records da
+  matriz B do Gridpoint Statistical Interpolation (GSI)}. 2022.
+Dispon{\'\i}vel em: \url{https://github.com/GAD-DIMNT-CPTEC/GSIBerror}.}
+
+\bibitem[Bastarz, Herdies e Sapucci 2017]{bastarz/2017}
+\abntrefinfo{Bastarz, Herdies e Sapucci}{BASTARZ; HERDIES; SAPUCCI}{2017}
+{BASTARZ, C.~F.; HERDIES, D.~L.; SAPUCCI, L.~F. Matriz de covariâncias dos
+  erros de previsão aplicada ao sistema de assimilação de dados global do
+  cptec: Experimentos com observação Única.
+\emph{Revista Brasileira de Meteorologia [online].}, v.~32, n.~3, p. 459--472,
+  2017.
+Dispon{\'\i}vel em:
+  \url{https://www.scielo.br/j/rbmet/a/8LQNdCV9jJM9whJdpkDLfCh/abstract/?lang=pt}.}
+
+\bibitem[Figueroa et al. 2016]{figueroaetal/2016}
+\abntrefinfo{Figueroa et al.}{FIGUEROA et al.}{2016}
+{FIGUEROA, S.~N. et al. The brazilian global atmospheric model (bam):
+  Performance for tropical rainfall forecasting and sensitivity to convective
+  scheme and horizontal resolution.
+\emph{Weather and Forecasting}, American Meteorological Society, Boston MA,
+  USA, v.~31, n.~5, p. 1547 -- 1572, 2016.
+Dispon{\'\i}vel em:
+  \url{https://journals.ametsoc.org/view/journals/wefo/31/5/waf-d-16-0062\_1.xml}.}
+
+\bibitem[Parrish e Derber 1992]{parrishetal/1992}
+\abntrefinfo{Parrish e Derber}{PARRISH; DERBER}{1992}
+{PARRISH, D.~F.; DERBER, J. The national meteorological center's
+  spectral-statistical interpolation analysis system.
+\emph{Monthly Weather Review}, v.~120, p. 1747--1763, 1992.
+Dispon{\'\i}vel em: \url{https://repository.library.noaa.gov/view/noaa/11449}.}
+
+\end{thebibliography}

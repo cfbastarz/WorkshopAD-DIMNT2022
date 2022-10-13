@@ -1,0 +1,35 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Figueroa et al. 2016]{figueroaetal/2016}
+\abntrefinfo{Figueroa et al.}{FIGUEROA et al.}{2016}
+{FIGUEROA, S.~N. et al. The brazilian global atmospheric model (bam):
+  Performance for tropical rainfall forecasting and sensitivity to convective
+  scheme and horizontal resolution.
+\emph{Weather and Forecasting}, American Meteorological Society, Boston MA,
+  USA, v.~31, n.~5, p. 1547 -- 1572, 2016.
+Dispon{\'\i}vel em:
+  \url{https://journals.ametsoc.org/view/journals/wefo/31/5/waf-d-16-0062\_1.xml}.}
+
+\bibitem[GuimarÃes et al. 2021]{guimaraes/2021}
+\abntrefinfo{GuimarÃes et al.}{GUIMARÃES et al.}{2021}
+{GUIMARÃES, B. d.~S. et al. An inter-comparison performance assessment of a
+  brazilian global sub-seasonal prediction model against four sub-seasonal to
+  seasonal (s2s) prediction project models.
+\emph{Climate Dynamics}, v.~56, p. 2359--2375, 2021.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s00382-020-05589-5}.}
+
+\bibitem[GuimarÃes et al. 2020]{guimaraes/2020}
+\abntrefinfo{GuimarÃes et al.}{GUIMARÃES et al.}{2020}
+{GUIMARÃES, B.~S. et al. Configuration and hindcast quality assessment of a
+  brazilian global sub-seasonal prediction system.
+\emph{Quarterly Journal of the Royal Meteorological Society}, v.~146, n.~728,
+  p. 1067--1084, 2020.
+Dispon{\'\i}vel em:
+  \url{https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/qj.3725}.}
+
+\end{thebibliography}

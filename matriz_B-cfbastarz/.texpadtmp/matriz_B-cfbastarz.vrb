@@ -1,0 +1,10 @@
+\frametitle{MONAN}
+\framesubtitle{SABER \faRebel}
+^^I\begin{block}{SABER - \textit{System-Agnostic Background Error Representation}:}
+^^I\vspace{0.5em}
+    O SABER implementa o \href{https://github.com/benjaminmenetrier/bump-standalone}{BUMP} (\textit{Background error on Unstrucured Mesh Package}), que é uma biblioteca F90 onde estão disponíveis os métodos de cálculo da matriz $\mathbf{B}$:
+    \begin{itemize}
+        \item Funciona em qualquer grade (gaussiana, esférica-cubada, não-estruturada, oceânica, área limitada);
+        \item Trabalha em grade mais grosseira, pois em geral, as estruturas representadas pela matriz de covariância são maiores do que a grade do modelo.
+    \end{itemize}^^I^^I
+^^I\end{block}

@@ -1,0 +1,230 @@
+\documentclass[tikz]{standalone}
+
+\include{./meus_pacotes}
+\include{./minhas_macros}
+
+\usetikzlibrary{calc,positioning}
+
+% Create fake \onslide and other commands for standalone picture
+\usepackage{xparse}
+\NewDocumentCommand{\onslide}{s t+ d<>}{}
+\NewDocumentCommand{\only}{d<>}{}
+\NewDocumentCommand{\uncover}{d<>}{}
+\NewDocumentCommand{\visible}{d<>}{}
+\NewDocumentCommand{\invisible}{d<>}{}
+
+
+% Carregamento dos pacotes utilizados
+\usepackage[brazilian]{babel} % comentar este pacote se a apresentação for em inglês
+\usepackage{times}
+
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+% Carregamento dos pacotes utilizados
+\usepackage[brazilian]{babel} % comentar este pacote se a apresentação for em inglês
+\usepackage{times}
+
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+
+\usepackage{pgf,tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{positioning,fit,calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{overlay-beamer-styles}
+
+
+
+\usepackage{varwidth}
+\usepackage{ragged2e}
+
+\usepackage{xcolor}
+\usepackage{xcolor-material}
+\usepackage{xcolor-solarized}
+
+\usepackage{graphicx}
+%\usepackage{subfigure}
+
+\usepackage{subcaption}
+
+\usepackage{listings}
+
+\usepackage[most]{tcolorbox}
+\usepackage[cache=false]{minted}
+\usemintedstyle{material}
+\tcbuselibrary{breakable}
+
+\tcbuselibrary{minted}
+
+\usetikzlibrary{decorations.pathmorphing} 
+\tcbuselibrary{skins}
+
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\tikzstyle{process1} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=MaterialBlue!30]
+
+\tikzstyle{process2} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=MaterialYellow!30]
+
+\tikzstyle{process3} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=MaterialGrey!30]
+
+\tikzstyle{process4} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=MaterialOrange!30]
+
+\tikzstyle{process5} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=MaterialGreen!30]
+
+\tikzstyle{process6} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=MaterialRed!30]
+
+\tikzstyle{process7} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=MaterialPurple!30]
+
+\tikzstyle{process8} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=MaterialCyan!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]        	
+
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=2.25cm, thick, scale=1, every node/.style={scale=0.5}]
+
+% Formas (col1)
+\node (anl_ctr_ncep) [process4, visible on=<1->]                        
+	{\begin{varwidth}{3cm}\Centering Ensemble\\Médio\\BAM \end{varwidth}};
+\node (anl_rdp_num1) [process8, below of=anl_ctr_ncep, visible on=<1->] 
+	{\begin{varwidth}{3cm}\Centering Emsemble BAM\\Membro \#1 \end{varwidth}};
+\node (anl_rdp_num2) [process8, below of=anl_rdp_num1, visible on=<1->] 
+	{\begin{varwidth}{3cm}\Centering Ensemble BAM\\Membro \#2 \end{varwidth}};
+\node (anl_rdp_dots) [process8, below of=anl_rdp_num2, visible on=<1->] 
+	{\begin{varwidth}{3cm}\Centering \cdots \end{varwidth}};
+\node (anl_rdp_numn) [process8, below of=anl_rdp_dots, visible on=<1->] 
+	{\begin{varwidth}{3cm}\Centering Ensemble BAM\\Membro \#$n$ \end{varwidth}};
+
+\node (bam_det_prev_hib) [process7, below of=anl_rdp_dots, yshift=-2.3cm, visible on=<1->] 
+	{\begin{varwidth}{3cm}\Centering BAM Determinístico\\(Previsão Híbrida) \end{varwidth}};
+
+% Formas (col2)
+\node (fct_ctr_ncep) [process4, xshift=4.75cm, visible on=<2->]            
+	{\begin{varwidth}{3cm}\Centering Ensemble Médio\\OMF GSI \end{varwidth}};
+\node (fct_rdp_num1) [process8, below of=fct_ctr_ncep, visible on=<2->] 
+	{\begin{varwidth}{3cm}\Centering Membro \#1\\OMF GSI \end{varwidth}};
+\node (fct_rdp_num2) [process8, below of=fct_rdp_num1, visible on=<2->] 
+	{\begin{varwidth}{3cm}\Centering Membro \#2\\OMF GSI \end{varwidth}};
+\node (fct_rdp_dots) [process8, below of=fct_rdp_num2, visible on=<2->] 
+	{\begin{varwidth}{3cm}\Centering \cdots \end{varwidth}};
+\node (fct_rdp_numn) [process8, below of=fct_rdp_dots, visible on=<2->] 
+	{\begin{varwidth}{3cm}\Centering Membro \#$n$\\OMF GSI \end{varwidth}};
+
+% Formas (col3)
+\node (pert_eof1) [process6, xshift=9.5cm, yshift=-4.5cm, visible on=<3->] 
+	{\begin{varwidth}{3cm}\Centering EnKF \end{varwidth}};
+\node (pert_eof_dots) [process5, below of=pert_eof1, yshift=-1.15cm, visible on=<3->]    
+	{\begin{varwidth}{3cm}\Centering Cálculo $\mathbf{P}^{b}$ \end{varwidth}};
+\node (pert_eofn) [process6, below of=pert_eof_dots, yshift=-1.15cm, visible on=<5->]    
+	{\begin{varwidth}{3cm}\Centering Análise com Matriz Híbrida\\$\alpha \mathbf{B}_{3DVar} + \beta \mathbf{P}^{b}$ \end{varwidth}};
+
+% Formas (col4)
+\node (anl_ctr_ncep2) [process1, xshift=14cm, yshift=-1.15cm, visible on=<4->] 
+	{\begin{varwidth}{3cm}\Centering Análise EnKF\\Membro \#1 \end{varwidth}};
+\node (pert_eof1_som) [process1, below of=anl_ctr_ncep2, visible on=<4->]     
+	{\begin{varwidth}{3cm}\Centering Análise EnKF\\Membro \#2 \end{varwidth}};
+\node (pert_eof1_sub) [process1, below of=pert_eof1_som, visible on=<4->]      
+	{\begin{varwidth}{3cm}\Centering \cdots \end{varwidth}};
+\node (pert_eof2_som) [process1, below of=pert_eof1_sub, visible on=<4->]      
+	{\begin{varwidth}{3cm}\Centering Análise EnKF\\Membro \#$n$ \end{varwidth}};
+
+\node (pert_eofn_som) [process1, right of=pert_eofn, xshift=2.25cm, visible on=<6->]      
+	{\begin{varwidth}{3cm}\Centering Análise EnKF\\Membro \#$n$ \end{varwidth}};
+
+% Formas (col5)
+\node (fct_ctr_ncep2) [process8, xshift=18.5cm, yshift=-1.15cm, visible on=<7->] 
+	{\begin{varwidth}{3cm}\Centering Ensemble BAM\\Membro \#1 \end{varwidth}};
+\node (fct_eof1_som) [process8, below of=fct_ctr_ncep2, visible on=<7->]       
+	{\begin{varwidth}{3cm}\Centering Ensemble BAM\\Membro \#2 \end{varwidth}};
+\node (fct_eof1_sub) [process8, below of=fct_eof1_som, visible on=<7->]        
+	{\begin{varwidth}{3cm}\Centering \cdots \end{varwidth}};
+\node (fct_eof2_som) [process8, below of=fct_eof1_sub, visible on=<7->]        
+	{\begin{varwidth}{3cm}\Centering Ensemble BAM\\Membro \#$n$ \end{varwidth}};
+
+\node (fct_eofn) [process7, right of=pert_eofn_som, xshift=2.25cm, visible on=<7->]        
+	{\begin{varwidth}{3cm}\Centering BAM Determinístico\\(Previsão Híbrida) \end{varwidth}};
+
+% Flechas (col1)
+\draw [arrow, visible on=<1->] (anl_rdp_num1) -- node[anchor=west] {} (anl_ctr_ncep);
+\draw [path, dashed, visible on=<1->] (anl_rdp_num1) -- node[anchor=west] {} (anl_rdp_num2);
+\draw [path, dashed, visible on=<1->] (anl_rdp_num2) -- node[anchor=west] {} (anl_rdp_dots);
+\draw [path, dashed, visible on=<1->] (anl_rdp_dots) -- node[anchor=west] {} (anl_rdp_numn);
+
+% Flechas (col2)
+\draw [stealth-stealth, visible on=<2->] (fct_ctr_ncep) -- node[anchor=west] {} (fct_rdp_num1);
+\draw [path, dashed, visible on=<2->] (fct_rdp_num1) -- node[anchor=west] {} (fct_rdp_num2);
+\draw [path, dashed, visible on=<2->] (fct_rdp_num2) -- node[anchor=west] {} (fct_rdp_dots);
+\draw [path, dashed, visible on=<2->] (fct_rdp_dots) -- node[anchor=west] {} (fct_rdp_numn);
+
+% Flechas (col3)
+\draw [arrow, visible on=<3->] (pert_eof1) -- node[anchor=west] {} (pert_eof_dots);
+\draw [arrow, visible on=<5->] (pert_eof_dots) -- node[anchor=west] {} (pert_eofn);
+
+% Flecha col1->col3
+\draw [arrow, visible on=<5->] (bam_det_prev_hib) -- node[anchor=west] {} (pert_eofn);
+
+% Flechas (col1->col2)
+\draw [arrow, visible on=<2->] (anl_ctr_ncep) -- (fct_ctr_ncep);
+\draw [arrow, visible on=<2->] (anl_rdp_num1) -- (fct_rdp_num1);
+\draw [arrow, visible on=<2->] (anl_rdp_num2) -- (fct_rdp_num2);
+\draw [arrow, visible on=<2->] (anl_rdp_dots) -- (fct_rdp_dots);
+\draw [arrow, visible on=<2->] (anl_rdp_numn) -- (fct_rdp_numn);
+
+% Linhas e flechas entre col2 e col3
+\node [coordinate, right = 0.4375cm of fct_ctr_ncep] (ADL1){};
+\draw [arrow, visible on=<3->] (fct_ctr_ncep) -- (ADL1) |- (pert_eof1);
+\node [coordinate, right = 0.4375cm of fct_rdp_num1] (ADL2){};
+\draw [arrow, visible on=<3->] (fct_rdp_num1) -- (ADL2) |- (pert_eof1);
+\node [coordinate, right = 0.4375cm of fct_rdp_num2] (ADL3){};
+\draw [arrow, visible on=<3->] (fct_rdp_num2) -- (ADL3) |- (pert_eof1);
+\node [coordinate, right = 0.4375cm of fct_rdp_dots] (ADL4){};
+\draw [arrow, visible on=<3->] (fct_rdp_dots) -- (ADL4) |- (pert_eof1);
+\node [coordinate, right = 0.4375cm of fct_rdp_numn] (ADL6){};
+\draw [arrow, visible on=<3->] (fct_rdp_numn) -- (ADL6) |- (pert_eof1);
+
+% Linhas e flechas entre col3 e col4 e entre as colunas col4 e col5
+\node [coordinate, right = 0.4375cm of pert_eof1] (BDL1){};
+\draw [arrow, visible on=<4->] (pert_eof1) -- (BDL1) |- (anl_ctr_ncep2);
+\node [coordinate, right = 0.4375cm of pert_eof1] (BDL2){};
+\draw [arrow, visible on=<4->] (pert_eof1) -- (BDL2) |- (pert_eof1_som);
+\node [coordinate, right = 0.4375cm of pert_eof1] (BDL3){};
+\draw [arrow, visible on=<4->] (pert_eof1) -- (BDL3) |- (pert_eof1_sub);
+\node [coordinate, right = 0.4375cm of pert_eof1] (BDL4){};
+\draw [arrow, visible on=<4->] (pert_eof1) -- (BDL4) |- (pert_eof2_som);
+
+\node [coordinate, right = 0.4375cm of pert_eofn] (BDL6){};
+\draw [arrow, visible on=<6->] (pert_eofn) -- (BDL6) -- (pert_eofn_som);
+
+% Flechas (col4->col5)
+\draw [arrow, visible on=<7->] (anl_ctr_ncep2) -- (fct_ctr_ncep2);
+\draw [arrow, visible on=<7->] (pert_eof1_som) -- (fct_eof1_som);
+\draw [arrow, visible on=<7->] (pert_eof1_sub) -- (fct_eof1_sub);
+\draw [arrow, visible on=<7->] (pert_eof2_som) -- (fct_eof2_som);
+\draw [arrow, visible on=<7->] (pert_eofn_som) -- (fct_eofn);
+
+% Retângulos das colunas 4 e 5
+%\draw[pattern=north west lines, pattern color=blue, thick, dotted] ($(anl_ctr_ncep2.north west)+(-0.5,0.25)$)  rectangle ($(pert_eofn_sub.south east)+(0.3,-1)$);
+%\draw[thick, dotted, visible on=<12->] ($(anl_ctr_ncep2.north west)+(-0.5,0.25)$)  rectangle ($(pert_eofn_sub.south east)+(0.3,-1)$);
+%\node (r1Label)[below=0.15cm of pert_eofn_sub, visible on=<12->] {\begin{varwidth}{3cm}\Centering Ensemble final\\de Análises\\Tamanho: $2n+1$ \end{varwidth}};
+
+%\draw[thick, dotted, visible on=<14->] ($(fct_ctr_ncep2.north west)+(-0.5,0.25)$)  rectangle ($(fct_eofn_sub.south east)+(0.3,-1)$);
+%\node (r1Label)[below=0.15cm of fct_eofn_sub, visible on=<14->] {\begin{varwidth}{3cm}\Centering Ensemble final\\de Previsões\\Tamanho: $2n+1$ \end{varwidth}};
+
+%
+\draw[arrow,->, visible on=<7->] (-0.75,0.5) -- (10,0.5) node[anchor=north east] {$k$ ciclos};
+
+\draw[arrow,|-|, visible on=<7->] (-0.75,-6.25) -- (7.75,-6.25) node[midway, below] {Assimilação de Dados};
+\draw[arrow,|-|, visible on=<7->] (8.55,-6.25) -- (10,-6.25) node[midway, below] {\begin{varwidth}{3cm}\Centering Previsão\\de Tempo \end{varwidth}};
+
+\end{tikzpicture}
+
+\end{document}
