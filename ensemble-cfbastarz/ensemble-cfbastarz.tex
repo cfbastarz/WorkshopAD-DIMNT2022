@@ -7,9 +7,6 @@
 
 % Tema padrão (base)
 \usetheme{default}
-%\usetheme{Singapore}
-%\usetheme{Boadilla}
-%\usetheme{minflat}
 
 \include{./meus_pacotes}
 \include{./minhas_macros}
@@ -23,8 +20,7 @@
 \author{Carlos Frederico Bastarz\\ \href{https://github.com/cfbastarz}{\faGithub} \href{http://lattes.cnpq.br/2410960909883784}{\faGraduationCap} \href{https://www.researchgate.net/profile/Carlos_Bastarz}{\faResearchgate} \href{mailto:carlos.bastarz@inpe.br}{\faEnvelope}}
 \institute{\textbf{\small{Workshop DIMNT}\\\vspace{0.5em}\footnotesize{``A Assimilação de Dados nas Componentes do Sistema Terrestre:\\Status e Perspectivas Futuras no Contexto do MONAN''}}}
 \date{
-	%\today 
-	06 de outubro de 2022
+	 06 de outubro de 2022
 }
 
 \makeatletter
@@ -38,8 +34,8 @@
 {
 \setbeamertemplate{footline}{} 
 \begin{frame}
-	\vspace{1cm}
-	\titlepage
+  \vspace{1cm}
+  \titlepage
 \end{frame}
 }
  
@@ -48,116 +44,94 @@
  
 % Sumário
 \begin{frame}
-    \frametitle{Sumário}
-    \framesubtitle{\faListOl}
-	\large\tableofcontents    
+\frametitle{Sumário}
+\framesubtitle{\faListOl}
+  \large\tableofcontents    
 \end{frame}
  
-%% Sumário
-%\begin{frame}
-%    \frametitle{Sumário}
-%    \begin{textblock}{15}(1.5,4)
-%        \begin{columns}[t]
-%            \begin{column}{.5\textwidth}
-%                \large\tableofcontents[sections={1-3}]
-%            \end{column}
-%            \begin{column}{.5\textwidth}
-%                \large\tableofcontents[sections={4-6}]
-%            \end{column}
-%        \end{columns}
-%    \end{textblock}    
-%\end{frame}
-
 \section{Introdução}
 
 \subsection{Apresentação}
 
 \begin{frame}{Introdução}
 \framesubtitle{Apresentação}
-%\vspace{1em}
-\begin{block}{Sistema de Previsão por Conjuntos Global:}
-	\begin{itemize}
-		\item Inicialmente, estabelecido por \citeonline{coutinho/1999}, sob orientação do Dr. José Paulo Bonatti;
-		\pause
-		\item Método de perturbação da condição inicial atmosférica do MCGA baseado na análise do NCEP, utilizando EOFs \cite{zhangekrishnamurti/1999};
-		\pause
-		\item Recebeu contribuições a aprimoramentos de diversos colaboradores do CPTEC (Dr. Marcos Mendonça, Dra. Renata Weissmann, Dr. Christopher Cunningham e vários bolsistas e alunos da PGMET);
-		\pause
-		\item Executado nas máquinas NEC SX6, Cray XE6, portado para o Cray XC50 e testes iniciais na Egeon;
-		\pause
-		\item Resolução: TQ0126L028 (\textasciitilde100 km, 28 níveis sigma), com 15 membros, com horizonte de previsões de 15 dias.
-	\end{itemize}
-\end{block}
+  \begin{block}{Sistema de Previsão por Conjuntos Global:}
+    \begin{itemize}
+	 	  \item Inicialmente, estabelecido por \citeonline{coutinho/1999}, sob orientação do Dr. José Paulo Bonatti;
+		  \pause
+		  \item Método de perturbação da condição inicial atmosférica do MCGA baseado na análise do NCEP, utilizando EOFs \cite{zhangekrishnamurti/1999};
+		  \pause
+		  \item Recebeu contribuições a aprimoramentos de diversos colaboradores do CPTEC (Dr. Marcos Mendonça, Dra. Renata Weissmann, Dr. Christopher Cunningham e vários bolsistas e alunos da PGMET);
+		  \pause
+		  \item Executado nas máquinas NEC SX6, Cray XE6, portado para o Cray XC50 e testes iniciais na Egeon;
+		  \pause
+		  \item Resolução: TQ0126L028 (\textasciitilde100 km, 28 níveis sigma), com 15 membros, com horizonte de previsões de 15 dias.
+	  \end{itemize}
+  \end{block}
 \end{frame}
 
 \subsection{Método de Perturbação MB09}
 
- \begin{frame}{Planos Futuros}
- \framesubtitle{Método de Perturbação MB09}
- \vspace{-1em}
- \begin{figure}[t]
-   \centering
-   \includestandalone[width=0.75\linewidth]{./diagrama3}
- \end{figure}
- \end{frame}
+\begin{frame}{Planos Futuros}
+\framesubtitle{Método de Perturbação MB09}
+  \vspace{-1em}
+  \begin{figure}[t]
+    \centering
+    \includestandalone[width=0.75\linewidth]{./diagrama3}
+  \end{figure}
+\end{frame}
 
 \section{Estado Atual}
 
 \subsection{Operação}
 
 \begin{frame}{Estado Atual}
-	\framesubtitle{Operação}
-	%\vspace{-1.5em}
-    \begin{block}{Situação Operacional:}
-    	\begin{itemize}
-    		\item Em 2021 foi concluída a transição da suíte oensMB09 para a máquina XC50;
-    		\pause
+\framesubtitle{Operação}
+  \begin{block}{Situação Operacional:}
+    \begin{itemize}
+      \item Em 2021 foi concluída a transição da suíte oensMB09 para a máquina XC50;
+    	\pause
 			\item Na época, a versão do modelo atmosférico usado pelo oensMB09, não era operacional no XC50 - aproveitou-se a oportunidade para se fazer a atualização para a versão operacional do modelo BAM (em coordenada sigma);
 			\pause
 			\item A resolução foi mantida (TQ0126L028, \textasciitilde100 km e 28 níveis sigma) com 15 membros, produzidos a partir da análise atmosférica do NCEP;
 			\pause
 			\item Com a transição e o upgrade do modelo atmosférico, foi estabelecida a versão 2.2.0 \cite{figueroaetal/2016} do oensMB09 - \textbf{ainda não operacional};
 			\begin{itemize}
-				\item Relatório de transição: resumido \href{https://s0.cptec.inpe.br/webcptec/sites/dmd/Avalia\%C3\%A7\%C3\%A3o-Modelo-Ensemble-Global-v1.1-2021.pdf}{(\faFile[regular] link)} e expandido \href{https://www.dropbox.com/s/je8q92jpwzc1bnz/16.\%20Relat\%C3\%B3rio\%20-\%20Bastarz\%20et\%20al.\%2C\%202021.pdf?dl=0}{(\faFile[regular] link)};
+			  \item Relatório de transição: resumido \href{https://s0.cptec.inpe.br/webcptec/sites/dmd/Avalia\%C3\%A7\%C3\%A3o-Modelo-Ensemble-Global-v1.1-2021.pdf}{(\faFile[regular] link)} e expandido \href{https://www.dropbox.com/s/je8q92jpwzc1bnz/16.\%20Relat\%C3\%B3rio\%20-\%20Bastarz\%20et\%20al.\%2C\%202021.pdf?dl=0}{(\faFile[regular] link)};
 			\end{itemize}
 			\item Aplicação do método de perturbação MB09 para a previsão subsazonal (TQ0126L042, 5 membros) - \textbf{em vias de operacionalização} \cite{guimaraes/2020, guimaraes/2021}.
-    	\end{itemize}
-    \end{block}
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \subsection{Previsão de Precipitação - 10 dias}
 
 \begin{frame}{Estado Atual}
-	\framesubtitle{Previsão de Precipitação - 10 dias}
-	\vspace{-1em}
-\begin{figure}
-    %\begin{center}
+\framesubtitle{Previsão de Precipitação - 10 dias}
+  \vspace{-1em}
+  \begin{figure}
     \centering
-        \subfigure[CMORPH]{\includegraphics[width=0.375\textwidth]{./figs/cmorphjja.001_trim.jpeg}}
-        \subfigure[BAM TQ0666L064]{\includegraphics[width=0.375\textwidth]{./figs/bamjjafct240.001_trim.jpeg}}\\\vspace{-0.5em}
-        \pause
-        \subfigure[ENS MEAN MCGA TQ0126L028]{\includegraphics[width=0.375\textwidth]{./figs/smcmeanjjaxe6fct240.001_trim.jpeg}}
-        \pause
-        \subfigure[ENS MEAN BAM TQ0126L028]{\includegraphics[width=0.375\textwidth]{./figs/smcmeanjjaxc50fct240.001_trim.jpeg}}
-        \caption{}
-    %\end{center}
-\end{figure}
+      \subfigure[CMORPH]{\includegraphics[width=0.375\textwidth]{./figs/cmorphjja.001_trim.jpeg}}
+      \subfigure[BAM TQ0666L064]{\includegraphics[width=0.375\textwidth]{./figs/bamjjafct240.001_trim.jpeg}}\\\vspace{-0.5em}
+      \pause
+      \subfigure[ENS MEAN MCGA TQ0126L028]{\includegraphics[width=0.375\textwidth]{./figs/smcmeanjjaxe6fct240.001_trim.jpeg}}
+      \pause
+      \subfigure[ENS MEAN BAM TQ0126L028]{\includegraphics[width=0.375\textwidth]{./figs/smcmeanjjaxc50fct240.001_trim.jpeg}}
+      \caption{}
+  \end{figure}
 \end{frame}
 
 \subsection{Skill e Espalhamento}
 
 \begin{frame}{Estado Atual}
-	\framesubtitle{Skill e Espalhamento}
-	%\vspace{-1em}
-\begin{figure}[H]
-    %\begin{center}
+\framesubtitle{Skill e Espalhamento}
+  \begin{figure}[H]
     \centering
-        \subfigure[Correlação de Anomalia]{\includegraphics[width=0.48\textwidth]{./figs/Untitled.005_trim.jpeg}}
-        \pause
-        \subfigure[Espalhamento X REQM]{\includegraphics[width=0.48\textwidth]{./figs/Untitled.007_trim.jpeg}}
-        \caption{}
-    %\end{center}
-\end{figure}
+      \subfigure[Correlação de Anomalia]{\includegraphics[width=0.48\textwidth]{./figs/Untitled.005_trim.jpeg}}
+      \pause
+      \subfigure[Espalhamento X REQM]{\includegraphics[width=0.48\textwidth]{./figs/Untitled.007_trim.jpeg}}
+      \caption{}
+  \end{figure}
 \end{frame}
 
 \section{Planos Futuros}
@@ -166,106 +140,99 @@
 
 \begin{frame}{Planos Futuros}
 \framesubtitle{Assimilação 3DEnVar}
-\vspace{-0.75em}
-\begin{figure}[t]
-  \centering
-  \includestandalone[width=0.75\linewidth]{./diagrama1}
-\end{figure}
+  \vspace{-0.75em}
+  \begin{figure}[t]
+    \centering
+    \includestandalone[width=0.75\linewidth]{./diagrama1}
+  \end{figure}
 \end{frame}
 
 \subsection{Assimilação 3DEnVar+MB09}
 
 \begin{frame}{Planos Futuros}
 \framesubtitle{Assimilação 3DEnVar+MB09}
-\vspace{-0.75em}
-\begin{figure}[t]
-  \centering
-  \includestandalone[width=0.75\linewidth]{./diagrama2}
-\end{figure}
+  \vspace{-0.75em}
+  \begin{figure}[t]
+    \centering
+    \includestandalone[width=0.75\linewidth]{./diagrama2}
+  \end{figure}
 \end{frame}
 
 \begin{frame}{Assimilação 3DEnVar+MB09}
 \framesubtitle{Um Monte de Membros}
-\begin{block}{Juntando tudo:}
-	\begin{itemize}
-		\item Combinação entre as técnicas EnKF e MB09;
-		\pause
-		\item Vantagem: possibilidade de usar a mesma análise atmosférica para produzir o ensemble usando o framework da assimilação (i.e., 3DEnVar);
-		\pause
-		\item Este exercício servirá para testar as técnicas para serem aplicadas ao MONAN;
-		\pause
-		\item O ensemble do 3DEnVar (laranja) parece ser diferente do ensemble gerado pelo MB09 (rosa e azul).
-	\end{itemize}
-\end{block}
-\pause
-\begin{block}{Então...}
-	\begin{itemize}
-		\item O EnKF fornece características que complementam aquelas geradas pela e EOF? 
-		\item A análise determinística do 3DEnVar é um bom substituto para a análise do NCEP?
-	\end{itemize}
-\end{block}
+  \begin{block}{Juntando tudo:}
+    \begin{itemize}
+  	  \item Combinação entre as técnicas EnKF e MB09;
+  		\pause
+  		\item Vantagem: possibilidade de usar a mesma análise atmosférica para produzir o ensemble usando o framework da assimilação (i.e., 3DEnVar);
+  		\pause
+  		\item Este exercício servirá para testar as técnicas para serem aplicadas ao MONAN;
+  		\pause
+  		\item O ensemble do 3DEnVar (laranja) parece ser diferente do ensemble gerado pelo MB09 (rosa e azul).
+  	\end{itemize}
+  \end{block}
+  \pause
+  \begin{block}{Então...}
+  	\begin{itemize}
+  		\item O EnKF fornece características que complementam aquelas geradas pela e EOF? 
+  		\item A análise determinística do 3DEnVar é um bom substituto para a análise do NCEP?
+  	\end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}{Assimilação 3DEnVar+MB09}
 \framesubtitle{Um Monte de Membros}
-%\vspace{-2em}
-	\begin{columns}[t]
-    	\begin{column}{.5\textwidth}
-   		    \vspace{-1.5em}
-   		    %\begin{block}{Um Monte de Membros:}
-    		\begin{itemize}
-        		\item Ponto sobre São Paulo (46S;23W);
-        		\item Previsão da PSNM 15 dias;
-        		\item Válido para 2012122000-2013010400.
-    		\end{itemize}
-    		\vspace{1em}
-    		\begin{itemize}
-				\item O EnKF fornece características que complementam aquelas geradas pela e EOF? 
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+   	  \vspace{-1.5em}
+    	\begin{itemize}
+        \item Ponto sobre São Paulo (46S;23W);
+        \item Previsão da PSNM 15 dias;
+        \item Válido para 2012122000-2013010400.
+    	\end{itemize}
+    	\vspace{1em}
+    	\begin{itemize}
+			  \item O EnKF fornece características que complementam aquelas geradas pela e EOF? 
 				\item A análise determinística do 3DEnVar é um bom substituto para a análise do NCEP?
 				\item Contribuições da meteorologista Mirlen Filgueira (PCI/INPE, entre nov./2021 e abril/2022).
 			\end{itemize}
-			%\end{block}
-        \end{column}
-        \begin{column}{.5\textwidth}
-            \vspace{-2em}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \vspace{-2em}
 			\begin{figure}[t]
 			  \centering
 			  \includegraphics[width=1.\linewidth]{./figs/spaguete71.png}
 			\end{figure}
-        \end{column}
-    \end{columns}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Assimilação 3DEnVar+MB09}
 \framesubtitle{Análises 3DEnVar e NCEP para o oensMB09}
-%\vspace{-2em}
-	\begin{columns}[t]
-	    \vspace{2em}
-    	\begin{column}{.45\textwidth}
-    		\centering
-    		Prevsisão de prec. a partir das análises do NCEP e 3DEnVar
-        	\begin{figure}[t]
-       	   	    %\vspace{3em}
-				\centering
+  \begin{columns}[t]
+	  \vspace{2em}
+    \begin{column}{.45\textwidth}
+      \centering
+    	Prevsisão de prec. a partir das análises do NCEP e 3DEnVar
+      \begin{figure}[t]
+			  \centering
 				\includegraphics[width=0.8\linewidth]{./figs/goes13.jpg}
 				\caption{GOES 13 IR (11 Jan 2013, 12Z)}
 			\end{figure}
-        \end{column}
-        \begin{column}{.5\textwidth}
-        	\begin{figure}[H]
-        		\vspace{-2em}
-				%\begin{center}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{figure}[H]
+        \vspace{-2em}
 				\centering
-        			\subfigure[CTR NCEP]{\includegraphics[width=0.45\textwidth]{./figs/prec_ctr_exp1_trim.jpg}}
-        			\subfigure[MEAN NCEP]{\includegraphics[width=0.45\textwidth]{./figs/prec_mean_exp1_trim.jpg}}\\
-        			\pause
-        			\subfigure[CTR 3DEnVar]{\includegraphics[width=0.45\textwidth]{./figs/prec_ctr_exp3_trim.jpg}}
-        			\pause
-        			\subfigure[MEAN 3DEnVar]{\includegraphics[width=0.45\textwidth]{./figs/prec_mean_exp3_trim.jpg}}
-    			%\end{center}
+        \subfigure[CTR NCEP]{\includegraphics[width=0.45\textwidth]{./figs/prec_ctr_exp1_trim.jpg}}
+        \subfigure[MEAN NCEP]{\includegraphics[width=0.45\textwidth]{./figs/prec_mean_exp1_trim.jpg}}\\
+        \pause
+        \subfigure[CTR 3DEnVar]{\includegraphics[width=0.45\textwidth]{./figs/prec_ctr_exp3_trim.jpg}}
+        \pause
+        \subfigure[MEAN 3DEnVar]{\includegraphics[width=0.45\textwidth]{./figs/prec_mean_exp3_trim.jpg}}
 			\end{figure}
-        \end{column}
-    \end{columns}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \section{Dificuldades e Desafios}
@@ -274,12 +241,12 @@
 
 \begin{frame}{Dificuldades e Desafios}
 \framesubtitle{Algumas Questões \faQuestionCircle}
-	\begin{itemize}
-		\item Controlar o espalhamento do ensemble das análises e previsões;
+  \begin{itemize}
+	  \item Controlar o espalhamento do ensemble das análises e previsões;
 		\pause
 		\item Lidar com o custo computacional elevado:
 		\begin{itemize}
-			\item Inteligência artificial é um caminho: uma rede neural pode emular o EnKF no 3DEnVar?
+		  \item Inteligência artificial é um caminho: uma rede neural pode emular o EnKF no 3DEnVar?
 		\end{itemize}
 		\pause
 		\item Finalidade do ensemble (aplicação): ter maior resolução ou ter conjunto maior?
@@ -301,26 +268,24 @@
 \begin{frame}
 \frametitle{Referências Bibliográficas}
 \framesubtitle{\faBookOpen~\faNewspaper[regular]~\faIcon[regular]{file}}
-\vspace{-1em}
-\footnotesize\bibliography{referencias}
+  \vspace{-1em}
+  \footnotesize\bibliography{referencias}
 \end{frame}
 
 % Frame Final (NÃO MODIFICAR)
 \usebackgroundtemplate%
 {%
-	\includegraphics[width=\paperwidth,height=\paperheight]{fundo_slide_inpe_sem_logo.png}%	
+  \includegraphics[width=\paperwidth,height=\paperheight]{fundo_slide_inpe_sem_logo.png}%	
 }
 
 \begingroup
 \setbeamertemplate{footline}{}
 {\nologo
 \begin{frame}
-	\begin{figure}[H]
-    	\vspace{-4em}
-		%\begin{center}
+  \begin{figure}[H]
+    \vspace{-4em}
 		\centering
-        	\hspace*{1.5em}\includegraphics[width=1.\textwidth]{DesinacaoNominativaCentralizada2020.pdf}
-    	%\end{center}
+    \hspace*{1.5em}\includegraphics[width=1.\textwidth]{DesinacaoNominativaCentralizada2020.pdf}
 	\end{figure}
 \end{frame}
 }
