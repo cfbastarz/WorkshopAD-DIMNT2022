@@ -12,4 +12,11 @@ Se forem adicionadas referências bibliográficas com ``bibtex``, compile o docu
     xelatex arquivo_principal.tex
     xelatex arquivo_principal.tex
 
+## Apresentações
+
+Gravações das apresentações disponíveis em:
+
+* [Workshop DAS-DIMNT - Matriz de Covarâncias dos Erros de Previsão](https://youtu.be/_nmUjoPI4qs)
+* [Workshop DAS-DIMNT - Assimilação de Dados Híbrida Visando a Previsão por Ensemble](https://youtu.be/L4E0OAOwZXk)
+
 Carlos Frederico Bastarz (carlos.bastarz@inpe.br)
